@@ -1,0 +1,11 @@
+##
+# Host Database
+#
+# localhost is used to configure the loopback interface
+# when the system is booting.  Do not change this entry.
+##
+
+# local1 thru local4 domains are localhost aliases to test multidb routing locally
+127.0.0.1	localhost local1.atriumhq.com local2.atriumhq.com local3.atriumhq.com local4.atriumhq.com
+255.255.255.255	broadcasthost
+::1             localhost 

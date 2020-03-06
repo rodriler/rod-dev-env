@@ -1,0 +1,73 @@
+//Merged 2019/09/05
+
+//NOTE 166 MISSING!!!
+
+SELECT *
+    FROM story
+    WHERE type = 'combo' AND scenario IN (
+                                          '016',        '018',
+                                          '026', '027', '028', '029',
+'030', '031', '032', '033', '034', '035', '036', '037', '038', '039',
+
+'050',
+'061', '062',                                    '067', '068',
+                     '073', '074', '075', '076', '077', '078', '079',
+'080', '081', '082', '083', '084', '085', '086', '087', '088', '089',
+'090', '091', '092', '093', '094', '095', '096', '097', '098', '099',
+'100', '101', '102', '103', '104', '105', '106', '107', '108', '109',
+'110', '111', '112', '113', '114', '115', '116', '117', '118', '119',
+'120', '121', '122', '123', '124', '125', '126', '127', '128', '129',
+'130', '131', '132', '133', '134', '135', '136', '137', '138', '139',
+'140', '141', '142', '143', '144', '145', '146', '147', '148', '149',
+'150', '151', '152', '153', '154', '155', '156', '157', '158', '159',
+'160', '161', '162', '163', '164', '165',        '167', '168', '169',
+'170', '171', '172', '173', '174', '175', '176', '177', '178', '179',
+'180', '181', '182', '183', '184', '185', '186', '187', '188', '189',
+'190', '191', '192', '193', '194', '195', '196', '197', '198', '199',
+'200', '201', '202', '203', '204', '205', '206', '207', '208', '209',
+'210', '211', '212', '213', '214', '215', '216', '217', '218', '219',
+'220'
+);
+
+
+TRUNCATE anomaly_story;
+TRUNCATE probe;
+TRUNCATE story_probe;
+TRUNCATE combo_probe;
+TRUNCATE story_org;
+TRUNCATE story_line;
+TRUNCATE story;
+TRUNCATE probe_config;
+DELETE FROM promoted_anomaly WHERE type = 'combo';
+DELETE FROM user_activity WHERE type = 'SCENARIO';
+
+
+*** useful scenario centric admin endpoints ***
+
+- *** Read Only ***
+- List ALL live scenarios 
+http://localhost:8080/api/admin/scenario
+- List visible scenarios
+http://localhost:8080/api/admin/scenario/visible
+- List specific scenario
+http://localhost:8080/api/admin/scenario/016
+
+- *** Updates ***
+- Create ALL live scenarios (into stories of course... ;)) 
+http://localhost:8080/api/admin/scenario/create-all
+
+Additional trump logic from Jason:
+
+.put(S078 , ImmutableSet.of(S175, S176, S180))
+.put(S080 , ImmutableSet.of(S140, S173, S175, S176, S179 180))
+.put(S081 , ImmutableSet.of(S130, S131, S133, S149, S155, S160))
+.put(S139 , ImmutableSet.of(S078, S080, S209, S210, S211))
+.put(S141 , ImmutableSet.of(S078, S080, S209, S210, S211))
+.put(S148 , ImmutableSet.of(S081))
+.put(S158 , ImmutableSet.of(S081))
+.put(S161 , ImmutableSet.of(S081))
+.put(S174 , ImmutableSet.of(S078, S080, S209, S210, S211))
+.put(S175 , ImmutableSet.of(S209, S210, S211))
+.put(S176 , ImmutableSet.of(S209, S210, S211))
+.put(S179 , ImmutableSet.of(S078, S209, S210, S211))
+.put(S180 , ImmutableSet.of(S209, S210, S211))

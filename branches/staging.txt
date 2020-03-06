@@ -1,0 +1,3 @@
+- longer cache ec2.myl
+- scan ec2 mark only what we use (ec2, rds)
+- static inventory

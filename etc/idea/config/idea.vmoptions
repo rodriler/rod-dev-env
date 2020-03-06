@@ -1,0 +1,64 @@
+#
+# Custom IntelliJ IDEA VM options
+# system:valencia
+# Notice flag sections are emacs sorted: M-x sort-lines
+#
+
+#
+# Good optimization references accumulated over time
+# https://www.jetbrains.com/help/idea/tuning-the-ide.html
+# https://gist.github.com/P7h/4388881
+
+-server
+-ea
+-Xms1024m
+-Xmx2048m
+-Xverify:none
+
+# -D java flags, D for reDefine possible legacy from C compilers...
+# keep sorted
+
+-Dfile.encoding=UTF-8
+-Djava.net.preferIPv4Stack=true
+-Djdk.attach.allowAttachSelf
+-Djdk.http.auth.tunneling.disabledSchemes=""
+-Djdk.module.illegalAccess.silent=true
+-Dkotlinx.coroutines.debug=off
+-Dsun.io.useCanonPrefixCache=false
+-Dsun.io.useCanonCaches=false
+
+# -XX sorted
+
+-XX:+AggressiveOpts
+-XX:+CMSClassUnloadingEnabled
+-XX:+CMSIncrementalMode
+-XX:+CMSIncrementalPacing
+-XX:+CMSParallelRemarkEnabled
+-XX:+CMSScavengeBeforeRemark
+-XX:+HeapDumpOnOutOfMemoryError
+-XX:+UseCMSInitiatingOccupancyOnly
+-XX:+UseCodeCacheFlushing
+-XX:+UseCompressedOops
+-XX:+UseConcMarkSweepGC
+-XX:+UseConcMarkSweepGC
+-XX:+UseParNewGC
+-XX:-OmitStackTraceInFastThrow
+-XX:-TraceClassUnloading
+-XX:CICompilerCount=2
+-XX:CMSInitiatingOccupancyFraction=65
+-XX:ErrorFile=$USER_HOME/java_error_in_idea_%p.log
+-XX:HeapDumpPath=$USER_HOME/java_error_in_idea.hprof
+-XX:MaxNewSize=512m
+-XX:MaxPermSize=512m
+-XX:MaxTenuringThreshold=1
+-XX:NewSize=512m
+-XX:ParallelGCThreads=4
+-XX:PermSize=512m
+-XX:ReservedCodeCacheSize=240m
+-XX:ReservedCodeCacheSize=64m
+-XX:SoftRefLRUPolicyMSPerMB=50
+-XX:SurvivorRatio=8
+
+#
+
+

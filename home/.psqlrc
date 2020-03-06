@@ -1,0 +1,25 @@
+-- my (rodrigo) psql setup
+
+\pset pager off
+
+-- http://serverfault.com/questions/34741/postgres-equivalent-to-mysqls-g
+-- \x is a toggle... (note it is :G not \G)
+-- select * from foo limit 1 :G
+
+\set G '\\set QUIET 1\\x\\g\\x\\set QUIET 0'
+
+-- Display null differently than empty.  Brilliant!
+\pset null '(null)'
+
+-- Automatically do expanded display (vertical) based on horizontal space
+-- available.
+-- \x auto
+
+-- Output timing information
+\timing
+
+-- If a command is run more than once in a row, only store it once in the history.
+\set HISTCONTROL ignoredups
+
+-- Network aware prompt. Helps tell apart local from network (eg. prod) ones
+\set PROMPT1 '%m %n@%/%R%#%x '
